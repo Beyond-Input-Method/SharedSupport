@@ -8,7 +8,7 @@ schema_list:
   - schema: luna_pinyin
 
 switcher:
-  caption: 〔方案選單〕
+  caption: 〔方案选项〕
   hotkeys:
     - Control+grave
     - Control+Shift+grave
