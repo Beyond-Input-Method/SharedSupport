@@ -1,0 +1,93 @@
+# Rime default settings
+# encoding: utf-8
+
+config_version: "0.40"
+
+schema_list:
+  - schema: bim_t9 # 超越九键（全拼）
+  - schema: bim_t14 # 超越14键（全拼）
+  - schema: rime_ice_18 # 雾凇拼音（全拼）
+  - schema: rime_ice_26 # 雾凇拼音（全拼）
+  - schema: double_pinyin # 自然码双拼
+  - schema: double_pinyin_14 # 自然码双拼
+  - schema: double_pinyin_18 # 自然码双拼
+  - schema: double_pinyin_abc # 智能 ABC 双拼
+  - schema: double_pinyin_abc_14 # 智能 ABC 双拼
+  - schema: double_pinyin_abc_18 # 智能 ABC 双拼
+  - schema: double_pinyin_mspy # 微软双拼
+  - schema: double_pinyin_mspy_14 # 微软双拼
+  - schema: double_pinyin_mspy_18 # 微软双拼
+  - schema: double_pinyin_sogou # 搜狗双拼
+  - schema: double_pinyin_sogou_14 # 搜狗双拼
+  - schema: double_pinyin_sogou_18 # 搜狗双拼
+  - schema: double_pinyin_flypy # 小鹤双拼
+  - schema: double_pinyin_flypy_14 # 小鹤双拼
+  - schema: double_pinyin_flypy_18 # 小鹤双拼
+  - schema: double_pinyin_ziguang # 紫光双拼
+  - schema: double_pinyin_ziguang_14 # 紫光双拼
+  - schema: double_pinyin_ziguang_18 # 紫光双拼
+  - schema: pinyin_simp
+  - schema: luna_pinyin
+  - schema: bim-stroke
+  - schema: easy_en
+  - schema: wubi86 # 五笔86
+  - schema: wubi86_jidian_14 # 五笔
+  - schema: wubi86_jidian # 五笔
+  - schema: wubi86_jidian_pinyin # 五笔拼音混输
+  - schema: wubi86_jidian_pinyin_14 # 五笔拼音混输
+  - schema: wubi86_14 # 五笔86-14
+  - schema: wubi_pinyin # 五笔拼音混输
+  - schema: wubi_pinyin_14 # 五笔拼音混输-14
+
+
+switcher:
+  caption: 〔方案选项〕
+  hotkeys:
+    - Control+grave
+    - Control+Shift+grave
+    - F4
+  save_options:
+    - full_shape
+    - ascii_punct
+    - simplification
+    - extended_charset
+    - zh_hant
+    - zh_hans
+    - zh_hant_tw
+  fold_options: true
+  abbreviate_options: true
+  option_list_separator: "／"
+
+menu:
+  page_size: 5
+
+punctuator:
+  full_shape:
+    __include: punctuation:/full_shape
+  half_shape:
+    __include: punctuation:/half_shape
+
+key_binder:
+  bindings:
+    __patch:
+      - key_bindings:/emacs_editing
+      - key_bindings:/move_by_word_with_tab
+      - key_bindings:/paging_with_minus_equal
+      - key_bindings:/paging_with_comma_period
+      - key_bindings:/numbered_mode_switch
+
+recognizer:
+  patterns:
+    email: "^[A-Za-z][-_.0-9A-Za-z]*@.*$"
+    uppercase: "[A-Z][-_+.'0-9A-Za-z]*$"
+    url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"
+
+ascii_composer:
+  good_old_caps_lock: true
+  switch_key:
+    Shift_L: inline_ascii
+    Shift_R: commit_text
+    Control_L: noop
+    Control_R: noop
+    Caps_Lock: clear
+    Eisu_toggle: clear
