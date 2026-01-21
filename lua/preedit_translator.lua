@@ -45,7 +45,7 @@ function M.func(input, seg, env)
     -- 注意：如果当前有多个分词段落（例如"你"+"hao"），preedit 包含"你好"。
     -- 当前 segment 对应"hao"。如果用"你好"替换"hao"，最终结果可能是"你你好"。
     -- 这种行为符合"将 preedit 放入候选"的字面定义。
-    yield_cand(seg, preedit, 'Preedit', 100000)
+    yield_cand(seg, preedit, '', 100000)
 end
 
 return M

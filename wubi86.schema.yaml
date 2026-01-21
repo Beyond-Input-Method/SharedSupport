@@ -45,6 +45,10 @@ engine:
     - punct_translator
     - reverse_lookup_translator
     - table_translator
+  filters:
+    - uniquifier # 去重
+    - tx_filter #综合过滤
+    - stroke_filter #笔画过滤
 
 speller:
   delimiter: " ;'"
