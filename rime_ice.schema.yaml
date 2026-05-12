@@ -23,19 +23,24 @@ schema:
 # abbrev: 默认的缩写取 states 的第一个字符，abbrev 可自定义一个字符
 switches:
   - name: ascii_mode
-    states: [ 中, Ａ ]
+    states: [ 中文输入, 英文输入 ]
+    abbrev: [ 中, 英 ]
   - name: ascii_punct  # 中英标点
-    states: [ ¥, $ ]
+    states: [ 中文标点, 英文标点 ]
+    abbrev: [ 。, . ]
   - name: traditionalization
-    states: [ 简, 繁 ]
+    states: [ 简体, 繁体 ]
+    abbrev: [ 简, 繁 ]
   - name: emoji
-    states: [ 💀, 😄 ]
+    states: [ 关闭表情, 开启表情 ]
+    abbrev: [ 💀, 😄 ]
     reset: 1
   - name: full_shape
     states: [ 半角, 全角 ]
+    abbrev: [ 半, 全 ]
   - name: search_single_char  # search.lua 的功能开关，辅码查词时是否单字优先
-    states: [正常, 单字]
-    abbrev: [词, 单]
+    states: [ 词语优先, 单字优先 ]
+    abbrev: [ 词, 单 ]
 
 
 # 输入引擎
