@@ -21,7 +21,8 @@ schema:
 
 switches:
   - name: full_shape
-    states: [ 壹贰叁, 一二三 ]
+    states: [ 大写汉字数字, 阿拉伯数字 ]
+    abbrev: [ 大, 阿 ]
 
 engine:
   processors:
