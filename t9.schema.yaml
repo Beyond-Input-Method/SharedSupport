@@ -23,6 +23,7 @@ schema:
 
 engine:
   processors:
+    - TxProcessor
     - ascii_composer
     - recognizer
     - key_binder
