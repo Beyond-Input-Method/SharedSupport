@@ -361,3 +361,9 @@ speller:
     - derive/k/j/
     - derive/c/x/
     - derive/n/b/
+
+# 拼音筛选（tx）
+tx:
+  db: t18_double_pinyin_sogou.db
+  reverse_db: t18_double_pinyin_sogou_reverse_lookup.db
+  layout: t18_double_pinyin_sogou_dp

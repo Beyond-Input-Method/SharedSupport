@@ -380,3 +380,10 @@ speller:
     - xform/ing$/;/
     - xlit/ⓆⓌⓇⓉⓎⓊⒾⓄⓅⓈⒹⒻⒼⒽⓂⒿⒸⓀⓁⓏⓍⓋⒷⓃ/qwrtyuiopsdfghmjcklzxvbn/
     # - abbrev/^(.).+$/$1/  # 首字母简拼，开启后会导致 3 个字母时 kj'x 变成 k'jx 的问题
+
+
+# 拼音筛选（tx）
+tx:
+  db: t26_double_pinyin_sogou.db
+  reverse_db: t26_double_pinyin_sogou_reverse_lookup.db
+  layout: t26_sogou_dp

@@ -356,3 +356,9 @@ speller:
     - derive/k/j/
     - derive/c/x/
     - derive/n/b/
+
+# 拼音筛选（tx）
+tx:
+  db: t18_natural_double_pinyin.db
+  reverse_db: t18_natural_double_pinyin_reverse_lookup.db
+  layout: t18_natural_double_pinyin_dp

@@ -366,3 +366,9 @@ speller:
     - derive/x/z/
     - derive/v/c/
     - derive/n/b/
+
+# 拼音筛选（tx）
+tx:
+  db: t14_double_pinyin_sogou.db
+  reverse_db: t14_double_pinyin_sogou_reverse_lookup.db
+  layout: t14_double_pinyin_sogou_dp

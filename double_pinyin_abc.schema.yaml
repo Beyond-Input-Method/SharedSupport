@@ -375,3 +375,10 @@ speller:
     - xform/[uv]e$|ui$/Ⓜ/
     - xlit/ⓆⓌⒺⓇⓉⓎⓄⓅⒶⓈⒹⒻⒼⒽⒿⓀⓁⓏⓍⒸⓋⒷⓃⓂ/qwertyopasdfghjklzxcvbnm/
     # - abbrev/^(.).+$/$1/  # 首字母简拼，开启后会导致 3 个字母时 kj'x 变成 k'jx 的问题
+
+
+# 拼音筛选（tx）：26 键智能ABC双拼
+tx:
+  db: t26_abc_double_pinyin.db
+  reverse_db: t26_abc_double_pinyin_reverse_lookup.db
+  layout: t26_abc_dp

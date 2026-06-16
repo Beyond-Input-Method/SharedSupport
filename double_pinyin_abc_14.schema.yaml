@@ -361,3 +361,9 @@ speller:
     - derive/x/z/
     - derive/v/c/
     - derive/n/b/
+
+# 拼音筛选（tx）
+tx:
+  db: t14_abc_double_pinyin.db
+  reverse_db: t14_abc_double_pinyin_reverse_lookup.db
+  layout: t14_abc_double_pinyin_dp

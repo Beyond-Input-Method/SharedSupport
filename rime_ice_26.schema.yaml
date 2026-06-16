@@ -572,3 +572,9 @@ speller:
     - derive/(.+)ong$/$1on/ # lon → long
     - derive/([tl])eng$/$1en/ # ten → teng
     - derive/([qwrtypsdfghjklzxcbnm])([aeio])ng$/$1ng/ # lng → lang、leng、ling、long
+
+# 拼音筛选（tx 插件）：26 键全键盘全拼，字母即拼音
+tx:
+  db: t26.db
+  layout: t26
+  input_is_pinyin: true

@@ -347,3 +347,10 @@ speller:
     - xform/[uv]e$|ui$/Ⓜ/
     - xlit/ⓆⓌⒺⓇⓉⓎⓄⓅⒶⓈⒹⒻⒼⒽⒿⓀⓁⓏⓍⒸⓋⒷⓃⓂ/qwertyopasdfghjklzxcvbnm/
     # - abbrev/^(.).+$/$1/  # 首字母简拼，开启后会导致 3 个字母时 kj'x 变成 k'jx 的问题
+
+
+# 拼音筛选（tx）
+tx:
+  db: t18_abc_double_pinyin.db
+  reverse_db: t18_abc_double_pinyin_reverse_lookup.db
+  layout: t18_abc_double_pinyin_dp

@@ -357,3 +357,9 @@ speller:
     - derive/k/j/
     - derive/c/x/
     - derive/n/b/
+
+# 拼音筛选（tx）
+tx:
+  db: t18_double_pinyin_ziguang.db
+  reverse_db: t18_double_pinyin_ziguang_reverse_lookup.db
+  layout: t18_double_pinyin_ziguang_dp
