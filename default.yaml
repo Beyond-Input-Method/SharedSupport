@@ -21,6 +21,8 @@ switcher:
     - zh_hant
     - zh_hans
     - zh_hant_tw
+    - search_single_char
+    - emoji
   fold_options: true
   abbreviate_options: true
   option_list_separator: "／"
