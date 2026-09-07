@@ -578,9 +578,3 @@ speller:
     - derive/k/j/
     - derive/c/x/
     - derive/n/b/
-
-
-# 拼音筛选（tx 插件）：18 键
-tx:
-  db: t18.db
-  layout: t18
