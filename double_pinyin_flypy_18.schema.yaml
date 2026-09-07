@@ -43,6 +43,7 @@ switches:
     states: [关闭表情, 开启表情]
     abbrev: [💀, 😄]
     reset: 1
+    default: 1
   - name: full_shape
     states: [半角, 全角]
     abbrev: [半, 全]
