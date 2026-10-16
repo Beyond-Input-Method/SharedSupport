@@ -98,14 +98,6 @@ speller:
     - abbrev/^([zcs]h).+$/$1/ # 超级简拼中，zh ch sh 视为整体（ch'sh → 城市），而不是像这样分开（c'h's'h → 吃好睡好）。
     - derive/^([nl])ve$/$1ue/
     - derive/^([jqxy])u/$1v/
-    - derive/un$/uen/
-    - derive/ui$/uei/
-    - derive/iu$/iou/
-    - derive/([aeiou])ng$/$1gn/
-    - derive/([dtngkhrzcs])o(u|ng)$/$1o/
-    - derive/ong$/on/
-    - derive/ao$/oa/
-    - derive/([iu])a(o|ng?)$/a$1$2/
     # ### 九宫格数字映射
     - derive/[abc]/2/
     - derive/[def]/3/
