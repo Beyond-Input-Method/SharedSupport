@@ -93,9 +93,9 @@ speller:
   alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA987654321
   initials: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA987654321
   algebra:
-    # ### 超级简拼
-    - abbrev/^([a-z]).+$/$1/ # 超级简拼
-    - abbrev/^([zcs]h).+$/$1/ # 超级简拼中，zh ch sh 视为整体（ch'sh → 城市），而不是像这样分开（c'h's'h → 吃好睡好）。
+    # ### 九键简拼：使用 fuzz 保留数字歧义下的混输路径
+    - fuzz/^([a-z]).+$/$1/ # 超级简拼
+    - fuzz/^([zcs]h).+$/$1/ # 超级简拼中，zh ch sh 视为整体（ch'sh → 城市），而不是像这样分开（c'h's'h → 吃好睡好）。
     - derive/^([nl])ve$/$1ue/
     - derive/^([jqxy])u/$1v/
     # ### 九宫格数字映射
