@@ -1,4 +1,4 @@
--- 主通道保留原有造句；fuzz 仅补充覆盖整个输入段的系统词条。
+-- 主通道用完整音节造句并补全尾音；fuzz 仅补充覆盖整个输入段的系统词条。
 local M = {}
 
 function M.init(env)
@@ -24,7 +24,7 @@ function M.func(input, seg, env)
   local iter, state = function() return nil end, nil
   if primary then iter, state = primary:iter() end
   local first = iter(state)
-  -- 主通道首选始终保留，避免新路径改变原有自动造句。
+  -- 主通道首选始终保留，避免补词通道覆盖主通道造句。
   if first then yield(first) end
 
   -- 显式分词、拼音筛选后的字母输入和单键仍只走原通道。

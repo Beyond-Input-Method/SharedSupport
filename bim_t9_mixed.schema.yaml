@@ -4,17 +4,18 @@ schema:
   name: 九键简拼补词
   version: "1.0.0"
 
-# 主方案负责输入字符和数字映射，此处只覆盖两条缩写规则。
+# 主方案负责输入字符和数字映射，此处在数字映射前插入两条简拼规则。
 speller:
   __include: bim_t9.schema.yaml:/speller
 
 __patch:
-  speller/algebra/@0: fuzz/^([a-z]).+$/$1/
-  speller/algebra/@1: fuzz/^([zcs]h).+$/$1/
+  speller/algebra/@before 0: fuzz/^([a-z]).+$/$1/
+  speller/algebra/@before 1: fuzz/^([zcs]h).+$/$1/
 
 translator:
   dictionary: rime_ice
   prism: bim_t9_mixed
+  enable_completion: false
   enable_user_dict: false
   enable_word_completion: false
   spelling_hints: 100
