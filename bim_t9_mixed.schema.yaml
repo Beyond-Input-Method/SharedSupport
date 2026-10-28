@@ -1,0 +1,29 @@
+# 九键简拼补词依赖，不单独加入 schema_list，不参与主通道造句。
+schema:
+  schema_id: bim_t9_mixed
+  name: 九键简拼补词
+  version: "1.0.0"
+
+# 主方案负责输入字符和数字映射，此处在数字映射前插入两条简拼规则。
+speller:
+  __include: bim_t9.schema.yaml:/speller
+
+__patch:
+  speller/algebra/@before 0: fuzz/^([a-z]).+$/$1/
+  speller/algebra/@before 1: fuzz/^([zcs]h).+$/$1/
+
+translator:
+  dictionary: rime_ice
+  prism: bim_t9_mixed
+  enable_completion: false
+  enable_user_dict: false
+  enable_word_completion: false
+  spelling_hints: 100
+  always_show_comments: true
+  comment_format: []
+  max_homophones: 1
+  max_homographs: 1
+
+# 不用语言模型在补词通道重跑整句搜索；Lua 会丢弃它产生的 sentence。
+grammar:
+  language: ""

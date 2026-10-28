@@ -9,6 +9,10 @@ schema:
   version: "1.0.0"
   author:
     - jimmy54
+  dependencies:
+    - melt_eng
+    - radical_pinyin
+    - bim_t9_mixed
   description: |
     超越拼音九键
 
@@ -31,7 +35,7 @@ engine:
     - fallback_segmentor
   translators:
     - punct_translator
-    - script_translator
+    - lua_translator@*t9_mixed_translator
     - lua_translator@*date_translator # 时间、日期、星期
     - table_translator@custom_phrase # 自定义短语 custom_phrase_t9.txt
   filters:
@@ -44,6 +48,7 @@ engine:
 # 主翻译器，拼音
 translator:
   dictionary: rime_ice         # 挂载词库 rime_ice.dict.yaml
+  enable_completion: true       # 完整音节之后的尾码按音节补全，避免整句退化为简拼
   enable_word_completion: true # 大于 4 音节的词条自动补全，librime > 1.11.2
   spelling_hints: 100            # corrector.lua ：为了让错音错字提示的 Lua 同时适配全拼双拼，将拼音显示在 comment 中
   always_show_comments: true   # corrector.lua ：Rime 默认在 preedit 等于 comment 时取消显示 comment，这里强制一直显示，供 corrector.lua 做判断用。
@@ -93,19 +98,9 @@ speller:
   alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA987654321
   initials: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA987654321
   algebra:
-    # ### 超级简拼
-    - abbrev/^([a-z]).+$/$1/ # 超级简拼
-    - abbrev/^([zcs]h).+$/$1/ # 超级简拼中，zh ch sh 视为整体（ch'sh → 城市），而不是像这样分开（c'h's'h → 吃好睡好）。
+    # 主通道只用完整音节造句，简拼由独立系统词条通道补充。
     - derive/^([nl])ve$/$1ue/
     - derive/^([jqxy])u/$1v/
-    - derive/un$/uen/
-    - derive/ui$/uei/
-    - derive/iu$/iou/
-    - derive/([aeiou])ng$/$1gn/
-    - derive/([dtngkhrzcs])o(u|ng)$/$1o/
-    - derive/ong$/on/
-    - derive/ao$/oa/
-    - derive/([iu])a(o|ng?)$/a$1$2/
     # ### 九宫格数字映射
     - derive/[abc]/2/
     - derive/[def]/3/
